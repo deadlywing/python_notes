@@ -59,3 +59,16 @@ eg.7   a/{1,3}b      will match a/b, a//b, and a///b
 You can omit either m or n; in that case, a reasonable value is assumed for the missing value.
 Omitting m is interpreted as a lower limit of 0, while omitting n results in an upper bound of infinity
 
+2. group
+
+(...) ; (?P<name>...) ;
+(?P=name)   A backreference to a named group; it matches whatever text was matched by the earlier group named name.
+(?#...)     A comment; the contents of the parentheses are simply ignored.
+(?=...)     Matches if ... matches next, but doesn’t consume any of the string
+(?!...)     Matches if ... doesn’t match next
+(?<=...)    Matches if the current position in the string is preceded by a match for ... that ends at the current position
+            most likely want to use the search() function rather than the match() function
+(?<!...)    Matches if the current position in the string is not preceded by a match for ....
+(?(id/name)yes-pattern|no-pattern)   Will try to match with yes-pattern if the group with given id or name exists, and with no-pattern if it doesn't.
+ (<)?(\w+@\w+(?:\.\w+)+)(?(1)>|$)
+\number     Matches the contents of the group of the same number.Groups are numbered starting from 1.
