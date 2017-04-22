@@ -61,7 +61,9 @@ Omitting m is interpreted as a lower limit of 0, while omitting n results in an 
 
 2. group
 
-(...) ; (?P<name>...) ;
+(...) ;
+(?:...): not grouping
+(?P<name>...) ;
 (?P=name)   A backreference to a named group; it matches whatever text was matched by the earlier group named name.
 (?#...)     A comment; the contents of the parentheses are simply ignored.
 (?=...)     Matches if ... matches next, but doesn’t consume any of the string
