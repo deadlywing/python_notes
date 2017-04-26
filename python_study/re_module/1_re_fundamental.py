@@ -87,9 +87,7 @@ import re
 
 
 
-
-# have warning
-# print(re.split('x*', 'axbc'))
+# print(re.split('x*', 'axbc'))    # have warning
 # print(re.split('x+', 'axbc'))
 # print(re.findall(r'\d+', 'one1two2three3'))
 
