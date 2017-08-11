@@ -1,5 +1,5 @@
 #! usr/bin/env python
-# bad  !!!!
+# bad  dummy_threading!!!!
 
 import dummy_threading as threading
 import time
