@@ -193,6 +193,7 @@ for i in range(10):
 
 # conditon VI : multiprocessing and threading (apply_async() need get() method to get the data)
 
+'''
 import os
 import multiprocessing
 import time
@@ -223,3 +224,22 @@ for i in range(8):
 
 for r in res_list:
     print(r.get())
+
+'''
+# conditon VI : multiprocessing.dummy compare with multiprocessing
+
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
+import time
+
+
+def run(num):
+    time.sleep(5)
+    print('NOw is the num : {}'.format(num))
+
+
+pool_processing = Pool()
+pool_thread = ThreadPool()
+
+# pool_processing.map(run, range(8))
+pool_thread.map(run, range(8))
